@@ -95,8 +95,9 @@ public class MessageWrapper {
     }
 
     private JsonNode addInformationToJson(String deviceName, String deviceResource , JsonNode payload){
-        ((ObjectNode)payload).put(DEVICE_FIELD_NAME,deviceName).put(RESOURCE_FIELD_NAME,deviceResource);
-        return payload;
+        ObjectNode jNode = jsonMapper.createObjectNode();
+        jNode.put(DEVICE_FIELD_NAME,deviceName).put(RESOURCE_FIELD_NAME,deviceResource).put(deviceResource,payload);
+        return  jNode;
     }
 
     private Optional<MapperConfig> getConfig(String topicName) {
