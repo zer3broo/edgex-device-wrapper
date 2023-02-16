@@ -3,7 +3,7 @@ mqtt-connection:
     broker:
       clientId: 3dPrinterMapperIn
       host: tcp://localhost:1883
-      topics: 3druck/#
+      topics: 3druck/+/+/+
   outbound:
     broker:
       clientId: 3dPrinterMapperOut
