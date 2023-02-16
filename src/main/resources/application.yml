@@ -1,0 +1,27 @@
+mqtt-connection:
+  inbound:
+    broker:
+      clientId: 3dPrinterMapperIn
+      host: tcp://localhost:1883
+      topics: 3druck/#
+  outbound:
+    broker:
+      clientId: 3dPrinterMapperOut
+      host: tcp://localhost:1883
+      topic: incomingData
+      username:
+      password:
+
+mqtt-topics-config:
+  topics:
+    - topicName: 3druck/+/+/+
+      mapperConfig:
+        nameInTopic: true
+        resourceInTopic: true
+        namePositions:
+          - 2
+        resourcePositions:
+          - 3
+          - 4
+        fieldName:
+        resourceName:
