@@ -66,6 +66,7 @@ public class MqttInboundConfig {
             @Override
             public void handleMessage(Message<?> message) throws MessagingException {
                 String payload = message.getPayload().toString();
+                System.out.println(payload);
                 XmlMapper xmlMapper = new XmlMapper();
                 ObjectMapper jsonMapper = new ObjectMapper();
                 JsonNode node;
