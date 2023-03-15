@@ -25,3 +25,13 @@ mqtt-topics-config:
           - 4
         fieldName:
         resourceName:
+    - topicName: 3druck/+/mqtt
+      mapperConfig:
+        nameInTopic: true
+        resourceInTopic: true
+        namePositions:
+          - 2
+        resourcePositions:
+          - 3
+        fieldName:
+        resourceName:

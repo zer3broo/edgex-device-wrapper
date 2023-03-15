@@ -125,7 +125,11 @@ public class MessageWrapper {
         String[] splitTopic = topic.split("/");
         AtomicReference<String> name = new AtomicReference<>("");
         position.forEach(n->{
-             name.set(name + splitTopic[n - 1]);
+             if(name.get().equals("")){
+                 name.set(name + splitTopic[n - 1]);
+             } else {
+                 name.set(name + "_" + splitTopic[n - 1]);
+             }
         });
         return name.get();
     }
